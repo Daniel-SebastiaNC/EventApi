@@ -3,18 +3,17 @@ package dev.java10x.EventClean.core.usecases;
 import dev.java10x.EventClean.core.domains.Event;
 import dev.java10x.EventClean.core.gateway.EventGateway;
 
-import java.util.List;
 
-public class FindEventCaseImpl implements FindEventCase{
+public class CreateEventUsecaseImpl implements CreateEventUsecase {
 
     private final EventGateway eventGateway;
 
-    public FindEventCaseImpl(EventGateway eventGateway) {
+    public CreateEventUsecaseImpl(EventGateway eventGateway) {
         this.eventGateway = eventGateway;
     }
 
     @Override
-    public List<Event> execute() {
-        return eventGateway.findEvent();
+    public Event execute(Event event) {
+        return eventGateway.createEvent(event);
     }
 }
