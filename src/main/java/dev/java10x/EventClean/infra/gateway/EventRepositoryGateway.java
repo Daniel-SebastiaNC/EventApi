@@ -27,4 +27,9 @@ public class EventRepositoryGateway implements EventGateway {
     public List<Event> findEvent() {
         return eventRepository.findAll().stream().map(eventEntityMapper::toDomain).toList();
     }
+
+    @Override
+    public boolean isExistByIdentifier(Event event) {
+        return  eventRepository.findEventByIdentifier(event.identifier()).isPresent();
+    }
 }

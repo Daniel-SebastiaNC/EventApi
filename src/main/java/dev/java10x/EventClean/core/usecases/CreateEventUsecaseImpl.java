@@ -2,6 +2,7 @@ package dev.java10x.EventClean.core.usecases;
 
 import dev.java10x.EventClean.core.domains.Event;
 import dev.java10x.EventClean.core.gateway.EventGateway;
+import dev.java10x.EventClean.infra.exceptions.IdentifierBadRequest;
 
 
 public class CreateEventUsecaseImpl implements CreateEventUsecase {
@@ -14,6 +15,9 @@ public class CreateEventUsecaseImpl implements CreateEventUsecase {
 
     @Override
     public Event execute(Event event) {
+        if (eventGateway.isExistByIdentifier(event)) {
+            throw new IdentifierBadRequest(event.identifier() + " is Already Used");
+        }
         return eventGateway.createEvent(event);
     }
 }
