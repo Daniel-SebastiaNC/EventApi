@@ -1,7 +1,6 @@
 package dev.java10x.EventClean.infra.dtos;
 
 import dev.java10x.EventClean.core.enuns.TypeEvent;
-import lombok.Builder;
 
 import java.time.LocalDateTime;
 
