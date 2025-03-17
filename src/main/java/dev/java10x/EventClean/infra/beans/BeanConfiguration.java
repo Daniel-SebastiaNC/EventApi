@@ -9,12 +9,12 @@ import org.springframework.context.annotation.Configuration;
 public class BeanConfiguration {
 
     @Bean
-    public CreateEventUsecase createEventCase(EventGateway eventGateway){
+    public CreateEventUsecase createEventUsecase(EventGateway eventGateway){
         return new CreateEventUsecaseImpl(eventGateway);
     }
 
     @Bean
-    public FindEventUsecase findEventCase(EventGateway eventGateway){
+    public FindEventUsecase findEventUsecase(EventGateway eventGateway){
         return new FindEventUsecaseImpl(eventGateway);
     }
 
