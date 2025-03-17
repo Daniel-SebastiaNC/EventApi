@@ -19,4 +19,13 @@ public class ControllerExceptionHandler {
         error.put("Message: ", "Please, insert a valid HashIdentifier for your event and try again");
         return error;
     }
+
+    @ExceptionHandler(DataNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public Map<String, String> handlerDataNotFoundException(DataNotFoundException ex){
+        Map<String, String> error = new HashMap<>();
+        error.put("Error: ", ex.getMessage());
+        error.put("Message: ", "Please, insert a valid HashIdentifier for your event and try again");
+        return error;
+    }
 }
