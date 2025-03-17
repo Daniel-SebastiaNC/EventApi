@@ -31,8 +31,8 @@ public class EventRepositoryGateway implements EventGateway {
     }
 
     @Override
-    public boolean isExistByIdentifier(Event event) {
-        return  eventRepository.findEventByIdentifier(event.identifier()).isPresent();
+    public boolean isExistByIdentifier(String identifier) {
+        return  eventRepository.findEventByIdentifier(identifier).isPresent();
     }
 
     @Override

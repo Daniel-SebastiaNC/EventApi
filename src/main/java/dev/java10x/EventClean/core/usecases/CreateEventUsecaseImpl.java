@@ -15,7 +15,7 @@ public class CreateEventUsecaseImpl implements CreateEventUsecase {
 
     @Override
     public Event execute(Event event) {
-        if (eventGateway.isExistByIdentifier(event)) {
+        if (eventGateway.isExistByIdentifier(event.identifier())) {
             throw new IdentifierBadRequest(event.identifier() + " is Already Used");
         }
         return eventGateway.createEvent(event);

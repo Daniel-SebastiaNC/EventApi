@@ -8,6 +8,6 @@ import java.util.Optional;
 public interface EventGateway {
     Event createEvent(Event event);
     List<Event> findEvent();
-    boolean isExistByIdentifier(Event event);
+    boolean isExistByIdentifier(String identifier);
     Optional<Event> findEventByIdentifier(String identifier);
 }
