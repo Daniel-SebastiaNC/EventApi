@@ -21,6 +21,21 @@ public class EventDtoMapper {
         );
     }
 
+    public Event toDomain(EventDto eventDto, String identifier){
+        return new Event(
+                eventDto.id(),
+                eventDto.name(),
+                eventDto.description(),
+                identifier,
+                eventDto.startDate(),
+                eventDto.endDate(),
+                eventDto.location(),
+                eventDto.organizer(),
+                eventDto.capacity(),
+                eventDto.type()
+        );
+    }
+
     public EventDto toEventDto(Event event){
         return new EventDto(
                 event.id(),
