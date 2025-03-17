@@ -22,4 +22,9 @@ public class BeanConfiguration {
     public FindEventByIdentifierUsecase findEventByIdentifierUsecase(EventGateway eventGateway){
         return new FindEventByIdentifierUsecaseImpl(eventGateway);
     }
+
+    @Bean
+    public RandomIdentifierUsecase randomIdentifierUsecase(EventGateway eventGateway){
+        return new RandomIdentifierUsecaseImpl(eventGateway);
+    }
 }
